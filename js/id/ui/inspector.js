@@ -78,6 +78,7 @@ iD.ui.Inspector = function() {
 
         var expertButton = selection.append('button')
             .attr('class', 'apply')
+            .attr('value', 'expert-toggle')
             .text('Tag view')
             .on('click', function() {
                 expert = !expert;

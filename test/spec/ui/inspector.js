@@ -75,4 +75,21 @@ describe("iD.ui.Inspector", function () {
 
         expect(spy).to.have.been.calledWith(entity, tags);
     });
+
+    describe("expert button", function () {
+        var expertButton;
+
+        beforeEach(function () {
+            expertButton = element.selectAll('button[value="expert-toggle"]');
+        });
+
+        it("shows preset view per default", function () {
+            expect(expertButton.text()).to.eql('Tag view');
+        });
+
+        it("shows expert view on demand", function () {
+            expertButton.trigger('click');
+            expect(expertButton.text()).to.eql('Preset view');
+        });
+    });
 });
